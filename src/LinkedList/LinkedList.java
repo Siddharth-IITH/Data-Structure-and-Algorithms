@@ -102,6 +102,7 @@ class LinkedList {
         System.out.println("Node at index "+index+" data is: " +ll.getNthNode(index) + "\n");
 
         int n=3;
+
         System.out.println(n+" Node from last: " +ll.getNthNodeFromLast(n) + "\n");
 
     }
