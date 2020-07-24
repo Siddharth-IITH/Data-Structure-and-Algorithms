@@ -50,24 +50,59 @@ class LinkedList {
 
         return false;
     }
+    
+    public int getNthNode(int index){
+        
+        Node current =head;
+        for (int i =0; i <index;i++){
+            current=current.next;
+        }
+        
+        
+        return current.data;
+    }
+    
+    public int getNthNodeFromLast(int n){
+        
+        Node current =head;
+        if(n>length){
+            return -1;
+        }
+        
+        if (n<=0){
+            return -1;
+        }
+        for (int i =1; i <=length-n;i++){
+            current=current.next;
+        }
+        
+        
+        return current.data;
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.push(1);
-        ll.push(2);
-        ll.push(3);
-        ll.push(4);
-        ll.push(7);
+        ll.push(10);
+        ll.push(20);
+        ll.push(30);
+        ll.push(40);
+        ll.push(70);
 
         System.out.println("start printing list: \n");
         ll.printlist();
-        System.out.println("\nprinting end.\n");
+        
 
-        System.out.println("Length of LinkedList is: " + ll.length + "\n\n");
+        System.out.println("\nLength of LinkedList is: " + ll.length + "\n");
 
         int search_val = 1;
 
-        System.out.println("Search for key=" + search_val + " in LinkedList is: " + String.valueOf(ll.search(ll.head, search_val)) + "\n\n");
+        System.out.println("Search for key=" + search_val + " in LinkedList is: " + String.valueOf(ll.search(ll.head, search_val)) + "\n");
+
+        int index=2;
+        System.out.println("Node at index "+index+" data is: " +ll.getNthNode(index) + "\n");
+
+        int n=3;
+        System.out.println(n+" Node from last: " +ll.getNthNodeFromLast(n) + "\n");
 
     }
 
