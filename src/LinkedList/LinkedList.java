@@ -96,6 +96,29 @@ class LinkedList {
         return slow.data;
 
     }
+    
+    public int getCountofNum(int n){
+        
+        int count =0;
+        Node curr=head;
+        while (curr!=null){
+            
+            if (curr.data==n){
+                count++;
+            }
+            
+            
+            curr=curr.next;
+        }
+        
+        
+        if ( count==0){
+            return -1;
+        }
+        return count;
+    }
+    
+    
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -103,8 +126,11 @@ class LinkedList {
         ll.push(20);
         ll.push(30);
         ll.push(40);
+        ll.push(10);
         ll.push(70);
         ll.push(190);
+        ll.push(10);
+        ll.push(1000);
 
         System.out.println("start printing list: \n");
         ll.printlist();
@@ -124,6 +150,9 @@ class LinkedList {
         System.out.println(n+" Node from last: " +ll.getNthNodeFromLast(n) + "\n");
         
         System.out.println("Middle node value is:"+ll.getMiddle());
+        
+        int c=10;
+        System.out.println("\nCount of "+c+" is: "+ll.getCountofNum(c));
         
 
     }
