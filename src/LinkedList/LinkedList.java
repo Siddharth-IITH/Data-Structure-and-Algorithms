@@ -79,6 +79,23 @@ class LinkedList {
         
         return current.data;
     }
+    
+    public int getMiddle(){
+     
+        Node slow=head;
+        Node fast = head;
+        
+        while( fast!=null && fast.next!=null){
+            
+            slow=slow.next;
+            fast=fast.next.next;
+            
+            
+        }
+        
+        return slow.data;
+
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -87,6 +104,7 @@ class LinkedList {
         ll.push(30);
         ll.push(40);
         ll.push(70);
+        ll.push(190);
 
         System.out.println("start printing list: \n");
         ll.printlist();
@@ -104,6 +122,9 @@ class LinkedList {
         int n=3;
 
         System.out.println(n+" Node from last: " +ll.getNthNodeFromLast(n) + "\n");
+        
+        System.out.println("Middle node value is:"+ll.getMiddle());
+        
 
     }
 
